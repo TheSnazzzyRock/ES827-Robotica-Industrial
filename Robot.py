@@ -118,12 +118,12 @@ class Robot:
         # Numerical masses
         # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
         self.list_numerical_masses: list[float] = [
+            5,
+            3,
+            2,
+            1,
             0.5,
-            0.3,
             0.2,
-            0.1,
-            0.05,
-            0.02,
         ]
 
         # Center of mass vectors for each link (x, y, z)
@@ -138,12 +138,12 @@ class Robot:
         # Numerical COM vectors
         # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
         self.list_numerical_com_vectors: list[np.ndarray] = [
-            np.array([0.0, 0.0, 0.02]),
-            np.array([0.1, 0.0, 0.0]),
-            np.array([0.1, 0.0, 0.0]),
-            np.array([0.0, 0.0, 0.01]),
-            np.array([0.0, 0.0, 0.0]),
-            np.array([0.0, 0.0, 0.0]),
+            np.array([0.0, 0.0, 20]),
+            np.array([10, 0.0, 0.0]),
+            np.array([10, 0.0, 0.0]),
+            np.array([0.0, 0.0, 1]),
+            np.array([0.0, 1, 0.0]),
+            np.array([1, 0.0, 0.0]),
         ]
 
         # Inertia Tensors for each link
@@ -158,12 +158,12 @@ class Robot:
         # Numerical Inertia Tensors
         # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
         self.list_numerical_inertia_tensors: list[np.ndarray] = [
-            np.array([[0.001, 0, 0], [0, 0.001, 0], [0, 0, 0.001]]),
-            np.array([[0.005, 0, 0], [0, 0.005, 0], [0, 0, 0.0001]]),
-            np.array([[0.005, 0, 0], [0, 0.005, 0], [0, 0, 0.0001]]),
-            np.array([[0.0005, 0, 0], [0, 0.0005, 0], [0, 0, 0.00001]]),
-            np.array([[0.0001, 0, 0], [0, 0.0001, 0], [0, 0, 0.00001]]),
-            np.array([[0.00005, 0, 0], [0, 0.00005, 0], [0, 0, 0.000001]]),
+            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
+            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
+            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
+            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
+            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
+            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
         ]
 
         # Gravity vector in the base frame
@@ -171,8 +171,8 @@ class Robot:
 
         # --- Actuator Parameters (DC Motors for SISO model) ---
         # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
-        self.f_motor_kt: float = 0.1
-        self.f_motor_kb: float = 0.1
+        self.f_motor_kt: float = 10
+        self.f_motor_kb: float = 10
         self.f_motor_r: float = 2.0
-        self.f_motor_bm_internal: float = 0.01
+        self.f_motor_bm_internal: float = 0.05
         self.f_gear_ratio: float = 100.0
