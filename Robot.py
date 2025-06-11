@@ -86,30 +86,29 @@ class Robot:
         self.list_joint_vars: list[symbols] = [q1, q2, q3, q4, q5, q6]
 
         # Numerical DH parameters
-        # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
         self.list_numerical_a: list[float] = [
-            0.05,
-            0.2,
-            0.2,
-            0.0,
-            0.0,
-            0.0,
+            0,
+            640,
+            0,
+            0,
+            0,
+            0,
         ]
         self.list_numerical_alpha: list[float] = [
             np.pi / 2,
             0,
-            0,
             np.pi / 2,
             -np.pi / 2,
+            np.pi / 2,
             0,
         ]
         self.list_numerical_d: list[float] = [
-            0.1,
             0,
             0,
-            0.1,
             0,
-            0.05,
+            496,
+            0,
+            75,
         ]
 
         # --- Dynamic Parameters of the Links ---
