@@ -63,7 +63,7 @@ class Robot:
     This class is specifically configured for the Niryo One robot.
     """
 
-    def __init__(self, s_name: str = "Niryo One"):
+    def __init__(self, s_name: str = "Fanuc LR Mate 200iB"):
         """
         Initializes the robot model with its kinematic and dynamic parameters.
 
@@ -106,9 +106,9 @@ class Robot:
             0,
             0,
             0,
-            496,
+            0.496,
             0,
-            75,
+            0.75,
         ]
 
         # --- Dynamic Parameters of the Links ---
@@ -116,14 +116,13 @@ class Robot:
         self.list_masses_sym: list[symbols] = [m1, m2, m3, m4, m5, m6]
 
         # Numerical masses
-        # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
         self.list_numerical_masses: list[float] = [
-            5,
-            3,
-            2,
-            1,
+            3.5,
+            3.5,
+            2.0,
+            1.2,
+            0.8,
             0.5,
-            0.2,
         ]
 
         # Center of mass vectors for each link (x, y, z)
@@ -136,14 +135,13 @@ class Robot:
             Matrix([rc6x, rc6y, rc6z]),
         ]
         # Numerical COM vectors
-        # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
         self.list_numerical_com_vectors: list[np.ndarray] = [
-            np.array([0.0, 0.0, 20]),
-            np.array([10, 0.0, 0.0]),
-            np.array([10, 0.0, 0.0]),
-            np.array([0.0, 0.0, 1]),
-            np.array([0.0, 1, 0.0]),
-            np.array([1, 0.0, 0.0]),
+            np.array([0.0, -0.025, 0.1]),
+            np.array([0.3, 0.0, 0.0]),
+            np.array([0.1, 0.0, 0.0]),
+            np.array([0.0, 0.0, 0.1]),
+            np.array([0.0, 0.02, 0.0]),
+            np.array([0.0, 0.0, 0.02]),
         ]
 
         # Inertia Tensors for each link
@@ -156,23 +154,21 @@ class Robot:
             Matrix([[I6xx, I6xy, I6xz], [I6xy, I6yy, I6yz], [I6xz, I6yz, I6zz]]),
         ]
         # Numerical Inertia Tensors
-        # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
         self.list_numerical_inertia_tensors: list[np.ndarray] = [
-            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
-            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
-            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
-            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
-            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
-            np.array([[10, 0, 0], [0, 10, 0], [0, 0, 10]]),
+            np.diag([0.02, 0.02, 0.01]),
+            np.diag([0.01, 0.01, 0.005]), 
+            np.diag([0.008, 0.008, 0.004]),
+            np.diag([0.005, 0.005, 0.002]),
+            np.diag([0.003, 0.003, 0.0015]),
+            np.diag([0.001, 0.001, 0.0005])
         ]
 
         # Gravity vector in the base frame
         self.mat_gravity_vector: Matrix = Matrix([0, 0, -9.81])
 
         # --- Actuator Parameters (DC Motors for SISO model) ---
-        # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
-        self.f_motor_kt: float = 10
-        self.f_motor_kb: float = 10
-        self.f_motor_r: float = 2.0
-        self.f_motor_bm_internal: float = 0.05
+        self.f_motor_kt: float = 0.3
+        self.f_motor_kb: float = 0.3
+        self.f_motor_r: float = 1.2
+        self.f_motor_bm_internal: float = 0.01
         self.f_gear_ratio: float = 100.0

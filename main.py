@@ -43,7 +43,7 @@ if __name__ == "__main__":
     # --- Symbolic Forward Kinematics ---
     print("\n--- Symbolic Forward Kinematics ---")
     mat_t0_6_symbolic: Matrix = obj_kinematics_calculator.symbolic_fk_matrix
-    pretty_print(mat_t0_6_symbolic)
+    #pretty_print(mat_t0_6_symbolic)
     print("\n")
 
     # --- Numerical Forward Kinematics ---

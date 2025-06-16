@@ -297,10 +297,14 @@ class Kinematics:
             return f_total_error
 
         # Define joint limits
-        # SUBSTITUIR PELOS VALORES REAIS!!!!!!!
         list_joint_bounds: list[tuple[float, float]] = [
-            (-np.pi, np.pi)
-        ] * self.robot.i_num_joints
+            (-2.9, 2.9),   
+            (-1.8, 2.1),   
+            (-2.8, 2.3),  
+            (-3.0, 3.0),  
+            (-2.0, 2.0),   
+            (-6.28, 6.28)  
+        ]
 
         # Execute the optimization (Sequential Least Squares Programming)
         result = minimize(

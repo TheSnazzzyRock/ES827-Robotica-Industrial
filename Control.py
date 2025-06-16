@@ -139,7 +139,7 @@ class Control:
         f_command_torques: np.ndarray = f_p_term + f_i_term + f_d_term
 
         # TROCAR PELO VALOR REAL!!!!!!!
-        f_max_torque_per_joint: float = 5.0
+        f_max_torque_per_joint: float = 50.0
         f_command_torques = np.clip(
             f_command_torques, -f_max_torque_per_joint, f_max_torque_per_joint
         )
