@@ -125,7 +125,7 @@ if __name__ == "__main__":
     # plot
     print("Generating graphs...")
     fig, axs = plt.subplots(3, 1, figsize=(18, 12), sharex=True)
-    fig.suptitle("Final Simulation with OO Architecture and Pinocchio", fontsize=16)
+    fig.suptitle("Fanuc LR Mate 200iB Simulation", fontsize=16)
 
     axs[0].plot(time_hist, q_hist, lw=2)
     axs[0].plot(time_hist, q_des_hist, '--', lw=1.5)
