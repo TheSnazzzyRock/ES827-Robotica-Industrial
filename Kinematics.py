@@ -1,8 +1,7 @@
 ## @file Kinematics.py
-#  @brief Implements the Kinematics class for robot kinematic calculations.
-#         Provides forward and inverse kinematics functionalities.
+#  @brief Implements kinematic calculations (FK, IK, Jacobian).
 #  @author Grupo 1
-#  @date June 7, 2025
+#  @date June 16, 2025
 #  @version 1.0
 #
 #  This file defines the Kinematics class, which uses the Denavit-Hartenberg (DH)
