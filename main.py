@@ -43,7 +43,7 @@ if __name__ == "__main__":
     # --- Symbolic Forward Kinematics ---
     print("\n--- Symbolic Forward Kinematics ---")
     mat_t0_6_symbolic: Matrix = obj_kinematics_calculator.symbolic_fk_matrix
-    #pretty_print(mat_t0_6_symbolic)
+    pretty_print(mat_t0_6_symbolic)
     print("\n")
 
     # --- Numerical Forward Kinematics ---
@@ -220,29 +220,6 @@ if __name__ == "__main__":
     mat_q_dot_current_history: np.ndarray = np.array(list_q_dot_current_history)
     mat_tau_command_history: np.ndarray = np.array(list_tau_command_history)
     mat_error_history: np.ndarray = np.array(list_error_history)
-
-    # Print shapes for debugging
-    print("Shape of time_points: {0}".format(np.array(list_time_points).shape))
-    print("Shape of q_desired_history: {0}".format(mat_q_desired_history.shape))
-    print("Shape of q_current_history: {0}".format(mat_q_current_history.shape))
-    print("Shape of q_dot_desired_history: {0}".format(mat_q_dot_desired_history.shape))
-    print("Shape of q_dot_current_history: {0}".format(mat_q_dot_current_history.shape))
-    print("Shape of tau_command_history: {0}".format(mat_tau_command_history.shape))
-    print("Shape of error_history: {0}".format(mat_error_history.shape))
-
-    # Check for NaN values in any array, because of lots of errors during debbuging
-    if np.any(np.isnan(mat_q_current_history)):
-        print("WARNING: q_current_history contains NaN. Simulation may have diverged.")
-    if np.any(np.isnan(mat_q_dot_current_history)):
-        print(
-            "WARNING: q_dot_current_history contains NaN. Simulation may have diverged."
-        )
-    if np.any(np.isnan(mat_tau_command_history)):
-        print(
-            "WARNING: tau_command_history contains NaN. Simulation may have diverged."
-        )
-    if np.any(np.isnan(mat_error_history)):
-        print("WARNING: error_history contains NaN. Simulation may have diverged.")
 
     # --- Plotting Results ---
     plt.figure(figsize=(15, 12))
